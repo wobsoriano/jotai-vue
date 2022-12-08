@@ -1,5 +1,5 @@
 import type { Atom, ExtractAtomValue } from 'jotai/vanilla'
-import { getCurrentInstance, onScopeDispose, ref } from 'vue'
+import { getCurrentInstance, onScopeDispose, readonly, ref } from 'vue'
 import { useStore } from './Provider'
 import type { AwaitedRef } from './useAtom'
 
@@ -7,6 +7,10 @@ type Store = ReturnType<typeof useStore>
 
 interface Options {
   store?: Store
+  /**
+   * @internal
+   */
+  storage?: typeof ref
 }
 
 export function useAtomValue<Value>(
@@ -20,9 +24,11 @@ export function useAtomValue<AtomType extends Atom<unknown>>(
 ): AwaitedRef<ExtractAtomValue<AtomType>>
 
 export function useAtomValue<Value>(atom: Atom<Value>, options?: Options) {
-  const store = useStore(options)
+  const store = useStore({ store: options?.store })
+  const storage = options?.storage ? options.storage : ref
+  const initialValue = store.get(atom)
 
-  const atomValue = ref(store.get(atom))
+  const atomValue = storage(initialValue)
 
   const unsub = store.sub(atom, () => {
     atomValue.value = store.get(atom) as any
@@ -34,5 +40,5 @@ export function useAtomValue<Value>(atom: Atom<Value>, options?: Options) {
     })
   }
 
-  return atomValue
+  return readonly(atomValue)
 }
