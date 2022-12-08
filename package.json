@@ -1,0 +1,55 @@
+{
+  "name": "jotai-vue",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.15.0",
+  "description": "",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/wobsoriano/jotai-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wobsoriano/jotai-vue.git"
+  },
+  "bugs": "https://github.com/wobsoriano/jotai-vue/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format cjs,esm --external jotai/vanilla",
+    "build": "pnpm build-fast --dts-resolve",
+    "lint": "eslint .",
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp && npm publish",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "jotai": ">=1.11.1",
+    "vue": ">=3.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.26.0",
+    "jotai": "^1.11.1",
+    "tsup": "6.0.1",
+    "typescript": "^4.7.4",
+    "vitest": "^0.24.3",
+    "vue": "^3.2.45"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
