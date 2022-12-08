@@ -6,7 +6,6 @@ export {
 
 export {
   useStore,
-  useProvideStore,
 } from './Provider'
 
 export {
