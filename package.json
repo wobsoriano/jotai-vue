@@ -27,13 +27,26 @@
     "dist"
   ],
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm --external jotai/vanilla",
+    "dev": "tsup & cd example-vue3 && pnpm dev",
+    "build-fast": "tsup",
     "build": "pnpm build-fast --dts-resolve",
     "lint": "eslint .",
     "prepublishOnly": "pnpm build",
     "release": "bumpp && npm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "external": [
+      "jotai/vanilla"
+    ],
+    "format": [
+      "cjs",
+      "esm"
+    ]
   },
   "peerDependencies": {
     "jotai": ">=1.11.1",
