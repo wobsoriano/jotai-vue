@@ -27,7 +27,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsup --watch & cd example-vue3 && pnpm dev",
+    "dev": "tsup --watch",
+    "example-vue3": "cd example-vue3 && pnpm dev",
     "build-fast": "tsup",
     "build": "pnpm build-fast --dts-resolve",
     "lint": "eslint .",
@@ -58,8 +59,11 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
+    "@testing-library/vue": "^7.0.0",
+    "@vitejs/plugin-vue": "^4.2.3",
     "bumpp": "^8.2.1",
     "eslint": "^8.26.0",
+    "happy-dom": "^9.20.3",
     "jotai": "^1.11.1",
     "tsup": "6.0.1",
     "typescript": "^4.7.4",

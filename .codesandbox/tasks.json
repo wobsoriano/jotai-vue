@@ -47,6 +47,11 @@
     "dev": {
       "name": "dev",
       "command": "pnpm dev",
+      "runAtStart": true
+    },
+    "example-vue3": {
+      "name": "Vue3 Example",
+      "command": "pnpm example-vue3",
       "runAtStart": true,
       "preview": {
         "port": 5173
