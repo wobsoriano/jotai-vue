@@ -27,7 +27,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsup & cd example-vue3 && pnpm dev",
+    "dev": "tsup --watch & cd example-vue3 && pnpm dev",
     "build-fast": "tsup",
     "build": "pnpm build-fast --dts-resolve",
     "lint": "eslint .",
@@ -46,6 +46,10 @@
     "format": [
       "cjs",
       "esm"
+    ],
+    "ignore-watch": [
+      "playground",
+      "example-vue3"
     ]
   },
   "peerDependencies": {

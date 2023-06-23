@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { useAtom, atom } from "jotai-vue";
-
-const countAtom = atom(3);
-
-const [count, setCount] = useAtom(countAtom);
+import Counter from "./components/Counter.vue";
+import StoreProvider from "./components/StoreProvider.vue";
 </script>
 
 <template>
-  <div>
-    <h1>{{ count }}</h1>
-    <button @click="setCount((prev) => prev + 1)">One up</button>
-  </div>
+  Counter:
+  <Counter />
+  <Counter />
+  <StoreProvider>
+    <Counter />
+    <Counter />
+  </StoreProvider>
+  <StoreProvider>
+    <Counter />
+    <Counter />
+  </StoreProvider>
 </template>
