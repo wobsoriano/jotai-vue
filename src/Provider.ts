@@ -13,5 +13,11 @@ export const StoreKey = Symbol("jotai-vue-store");
 export const provideStore = (store: Store) => provide(StoreKey, store);
 
 export const useStore = (options?: Options) => {
-  return inject(StoreKey, options?.store || getDefaultStore());
+  /*
+  Priority:
+   1) The store parameter
+   2) The store injected
+   3) The default jotai store
+  */
+  return options?.store || inject(StoreKey, getDefaultStore());
 };

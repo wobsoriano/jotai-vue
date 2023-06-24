@@ -10,4 +10,5 @@ import DualComponent from "./DualComponent.vue";
   <Provider data-testid="provider-2">
     <DualComponent data-testid="pair-2" />
   </Provider>
+  <DualComponent data-testid="pair-3" />
 </template>

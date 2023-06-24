@@ -1,3 +1,3 @@
-import { atom } from "../src";
+import { atom } from "../../";
 
 export const countAtom = atom(0);

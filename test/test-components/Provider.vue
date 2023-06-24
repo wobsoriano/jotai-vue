@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { createStore } from "jotai/vanilla";
-import { provideStore } from "../";
+import { provideStore } from "../../";
 
 const store = createStore();
 provideStore(store);
