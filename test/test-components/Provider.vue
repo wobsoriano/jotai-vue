@@ -7,5 +7,9 @@ provideStore(store);
 </script>
 
 <template>
-  <slot />
+  <div>
+    Provider
+    <hr />
+    <slot />
+  </div>
 </template>

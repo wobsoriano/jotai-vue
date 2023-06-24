@@ -1,7 +1,7 @@
 import { render, fireEvent, screen } from "@testing-library/vue";
-import { describe, expect, it } from "vitest";
+import { it } from "vitest";
 
-import Component from "./Component.vue";
+import Component from "./test-components/Component.vue";
 
 it("increments value on click", async () => {
   render(Component);
