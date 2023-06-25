@@ -1,21 +1,11 @@
-import { atom } from 'jotai/vanilla'
+import { atom } from "jotai/vanilla";
 
-export {
-  useAtomValue,
-} from './useAtomValue'
+export { useAtomValue } from "./useAtomValue";
 
-export {
-  useStore,
-} from './Provider'
+export { useStore, provideStore } from "./Provider";
 
-export {
-  useSetAtom,
-} from './useSetAtom'
+export { useSetAtom } from "./useSetAtom";
 
-export {
-  useAtom,
-} from './useAtom'
+export { useAtom } from "./useAtom";
 
-export {
-  atom,
-}
+export { atom };
