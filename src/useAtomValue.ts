@@ -1,5 +1,4 @@
 import type { Atom, ExtractAtomValue } from 'jotai/vanilla'
-import type { ref } from 'vue'
 import { getCurrentInstance, onScopeDispose, readonly, shallowRef } from 'vue'
 import { useStore } from './Provider'
 import type { AwaitedRef } from './useAtom'
@@ -10,14 +9,6 @@ const isPromise = (x: unknown): x is Promise<unknown> => x instanceof Promise
 
 interface Options {
   store?: Store
-  /**
-   * @internal
-   */
-  storage?: typeof ref
-  /**
-   * @internal
-   */
-  storageKey?: string
 }
 
 export function useAtomValue<Value>(
@@ -37,14 +28,11 @@ export function useAtomValue<Value>(atom: Atom<Value>, options?: Options) {
   if (isPromise(initialValue))
     throw new Error('[jotai-vue]: Async atom values are not supported.')
 
-  const atomValue = options?.storage
-    ? options.storage(options.storageKey, () => initialValue)
-    /**
-     * Prefer `shallowRef` over `ref` for external state
-     * - https://vuejs.org/api/reactivity-advanced.html#shallowref
-     * -
-     */
-    : shallowRef(initialValue)
+  /**
+   * Prefer `shallowRef` over `ref` for external state
+   * - https://vuejs.org/api/reactivity-advanced.html#shallowref
+   */
+  const atomValue = shallowRef(initialValue)
 
   const unsub = store.sub(atom, () => {
     const nextValue = store.get(atom)
