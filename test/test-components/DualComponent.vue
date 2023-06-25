@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Counter from "./Component.vue";
+import Counter from './Component.vue'
 </script>
 
 <template>

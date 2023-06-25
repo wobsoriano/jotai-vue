@@ -23,9 +23,9 @@ Define your own state atoms, or take advantage of Jotai's integrations with [Imm
 Each atom is their own small piece of shared state.
 
 ```ts
-import { atom } from "jotai-vue";
+import { atom } from 'jotai-vue'
 
-export const countAtom = atom(0);
+export const countAtom = atom(0)
 ```
 
 ## Use Atoms
@@ -34,18 +34,20 @@ Use atoms in your components and the state will automatically be shared across c
 
 ```vue
 <script setup lang="ts">
-import { useAtom } from "jotai-vue";
+import { useAtom } from 'jotai-vue'
 
 // Atoms shouldn't be created in the `setup` scripts, but imported from other files
-import { countAtom } from "./testAtoms";
+import { countAtom } from './testAtoms'
 
-const [count, setCount] = useAtom(countAtom);
+const [count, setCount] = useAtom(countAtom)
 </script>
 
 <template>
   <div>
     <p>Times clicked: {{ count }}</p>
-    <button @click="setCount((prev) => prev + 1)">increment</button>
+    <button @click="setCount((prev) => prev + 1)">
+      increment
+    </button>
   </div>
 </template>
 ```

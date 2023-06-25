@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { createStore } from "jotai/vanilla";
-import { provideStore } from "../../";
+import { createStore } from 'jotai/vanilla'
+import { provideStore } from '../../'
 
-const store = createStore();
-provideStore(store);
+const store = createStore()
+provideStore(store)
 </script>
 
 <template>
   <div>
     Provider
-    <hr />
+    <hr>
     <slot />
   </div>
 </template>

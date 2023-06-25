@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Provider from "./Provider.vue";
-import DualComponent from "./DualComponent.vue";
+import Provider from './Provider.vue'
+import DualComponent from './DualComponent.vue'
 </script>
 
 <template>

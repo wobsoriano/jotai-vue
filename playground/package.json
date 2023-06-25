@@ -11,8 +11,8 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "jotai-vue": "workspace:*"
+    "jotai-vue": "workspace:*",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@tsconfig/node18": "^2.0.1",

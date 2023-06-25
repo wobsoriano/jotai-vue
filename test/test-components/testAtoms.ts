@@ -1,3 +1,3 @@
-import { atom } from "../../";
+import { atom } from '../../'
 
-export const countAtom = atom(0);
+export const countAtom = atom(0)

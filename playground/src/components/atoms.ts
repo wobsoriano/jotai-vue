@@ -1,3 +1,3 @@
-import { atom } from "jotai-vue";
+import { atom } from 'jotai-vue'
 
-export const countAtom = atom(3);
+export const countAtom = atom(3)
