@@ -28,6 +28,7 @@
   ],
   "scripts": {
     "dev": "tsup --watch --onSuccess \"pnpm --filter playground dev\"",
+    "playground": "cd playground && pnpm dev",
     "build-fast": "tsup",
     "build": "pnpm build-fast --dts-resolve",
     "lint": "eslint .",

@@ -49,9 +49,9 @@
       "command": "pnpm dev",
       "runAtStart": true
     },
-    "example-vue3": {
+    "playground": {
       "name": "Vue3 Example",
-      "command": "pnpm example-vue3",
+      "command": "pnpm playground",
       "runAtStart": true,
       "preview": {
         "port": 5173
